@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Built Exclusively For The Silver Youth | Zytrom</title>
+    <meta name="description" content="A complete marketing package built specifically for The Silver Youth. Research, angles, ads, landing page, VSL outline.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #06070a;
+            --surface: #0d0f14;
+            --surface-2: #12151c;
+            --surface-glass: rgba(18, 21, 28, 0.55);
+            --border: rgba(255,255,255,0.06);
+            --border-hover: rgba(212, 175, 55, 0.3);
+            --gold: #d4af37;
+            --gold-light: #e8c84a;
+            --gold-dim: rgba(212, 175, 55, 0.1);
+            --white: #f0f0f0;
+            --gray: #8a8d96;
+            --gray-light: #b8bac2;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--white);
+            background: var(--bg);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 10% 0%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 90% 100%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container { max-width: 920px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+
+        h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.1; }
+        .serif { font-family: 'Fraunces', Georgia, serif; }
+
+        /* ========== HEADER ========== */
+        .header {
+            padding: 64px 0 0;
+            text-align: center;
+        }
+        .header-brands {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        .brand-name {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+        }
+        .brand-zytrom { color: var(--gold); }
+        .brand-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border);
+        }
+        .brand-prospect { color: var(--gray); }
+        .header-badge {
+            display: inline-block;
+            background: var(--gold-dim);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            color: var(--gold);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 32px;
+        }
+        .header h1 {
+            font-size: clamp(34px, 5vw, 56px);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+        .header h1 span { color: var(--gold); }
+        .header p.lede {
+            font-size: 17px;
+            color: var(--gray-light);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* ========== STATS BAR ========== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            padding: 48px 0;
+            margin: 64px 0 40px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .stat { text-align: center; }
+        .stat .value {
+            font-family: 'Fraunces', serif;
+            font-size: clamp(34px, 4vw, 52px);
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            display: block;
+        }
+        .stat .value .plus { font-size: 0.7em; opacity: 0.7; }
+        .stat .label {
+            margin-top: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        /* ========== DELIVERABLES ========== */
+        .deliverables {
+            padding: 56px 0 32px;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-title .kicker {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .section-title h2 {
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+        .section-title p {
+            color: var(--gray-light);
+            max-width: 560px;
+            margin: 0 auto;
+            font-size: 15px;
+        }
+
+        .accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .acc-item {
+            background: var(--surface-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+        .acc-item:hover { border-color: var(--border-hover); }
+        .acc-item.open { border-color: var(--border-hover); }
+        .acc-head {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 24px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            cursor: pointer;
+            text-align: left;
+            color: var(--white);
+            font-family: inherit;
+        }
+        .acc-head-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+        .acc-num {
+            font-family: 'Fraunces', serif;
+            font-size: 20px;
+            color: var(--gold);
+            font-weight: 600;
+            width: 32px;
+            flex-shrink: 0;
+        }
+        .acc-title {
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .acc-meta {
+            font-size: 12px;
+            color: var(--gray);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+        .acc-chev {
+            width: 22px;
+            height: 22px;
+            color: var(--gold);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .acc-item.open .acc-chev { transform: rotate(180deg); }
+        .acc-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .acc-item.open .acc-body { max-height: 2400px; }
+        .acc-body-inner {
+            padding: 0 28px 32px;
+            color: var(--gray-light);
+            font-size: 15px;
+        }
+        .acc-body-inner h4 {
+            color: var(--white);
+            font-size: 15px;
+            font-weight: 700;
+            margin: 24px 0 10px;
+            letter-spacing: 0.3px;
+        }
+        .acc-body-inner h4:first-child { margin-top: 0; }
+        .acc-body-inner p { margin-bottom: 12px; }
+        .acc-body-inner ul { padding-left: 20px; margin: 10px 0; }
+        .acc-body-inner li { margin-bottom: 6px; }
+        .acc-body-inner strong { color: var(--white); font-weight: 600; }
+        .acc-body-inner em { color: var(--gold); font-style: normal; font-weight: 500; }
+        .acc-body-inner .script-block {
+            background: var(--surface-2);
+            border-left: 3px solid var(--gold);
+            padding: 16px 20px;
+            margin: 14px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+        .acc-body-inner .script-block strong { color: var(--gold); }
+        .acc-body-inner .acc-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 12px 22px;
+            background: var(--gold);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            transition: all 0.25s ease;
+        }
+        .acc-body-inner .acc-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-1px);
+        }
+        .acc-body-inner .gap-card {
+            padding: 16px 20px;
+            background: var(--surface-2);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+        }
+        .acc-body-inner .gap-card strong { color: var(--gold-light); }
+        .angles-grid {
+            display: grid;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        .angle-item {
+            padding: 18px 20px;
+            background: var(--surface-2);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .angle-item .a-name {
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .angle-item .a-head {
+            color: var(--white);
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+        .angle-item .a-hook {
+            font-size: 14px;
+            color: var(--gray-light);
+        }
+
+        /* ========== PROCESS ========== */
+        .process {
+            padding: 80px 0;
+            margin-top: 32px;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .process-card {
+            padding: 28px 24px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .process-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+        }
+        .process-card .p-num {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 32px;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 14px;
+            display: block;
+        }
+        .process-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .process-card p {
+            color: var(--gray-light);
+            font-size: 13px;
+        }
+
+        /* ========== FINAL CTA ========== */
+        .final-cta {
+            padding: 96px 0 120px;
+            text-align: center;
+        }
+        .final-cta h2 {
+            font-size: clamp(32px, 4.5vw, 52px);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .final-cta h2 span { color: var(--gold); font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; }
+        .final-cta p {
+            color: var(--gray-light);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            font-size: 17px;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 40px;
+            background: var(--gold);
+            color: var(--bg);
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 800;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.2);
+        }
+        .cta-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 16px 48px rgba(212, 175, 55, 0.35);
+        }
+        .cta-note {
+            margin-top: 20px;
+            font-size: 13px;
+            color: var(--gray);
+            font-style: italic;
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--gray);
+            border-top: 1px solid var(--border);
+        }
+
+        /* ========== REVEAL ========== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 720px) {
+            .stats-bar { grid-template-columns: 1fr; gap: 28px; padding: 32px 0; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .header-brands { gap: 14px; }
+            .brand-name { font-size: 11px; letter-spacing: 2px; }
+            .acc-head { padding: 18px 20px; }
+            .acc-body-inner { padding: 0 20px 24px; }
+            .acc-num { font-size: 16px; width: 24px; }
+            .acc-title { font-size: 15px; }
+            .header { padding: 40px 0 0; }
+            .deliverables { padding: 40px 0 20px; }
+            .process { padding: 56px 0; }
+            .final-cta { padding: 64px 0 80px; }
+        }
+        @media (max-width: 480px) {
+            .process-grid { grid-template-columns: 1fr; }
+            .cta-btn { padding: 16px 28px; font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ============ HEADER ============ -->
+    <header class="header reveal">
+        <div class="header-brands">
+            <span class="brand-name brand-zytrom">Zytrom</span>
+            <span class="brand-divider"></span>
+            <span class="brand-name brand-prospect">The Silver Youth</span>
+        </div>
+        <div class="header-badge">Private Package · Apr 2026</div>
+        <h1>Built Exclusively For<br><span>The Silver Youth.</span></h1>
+        <p class="lede">A complete marketing package created specifically for your business. Research, campaign angles, ad scripts, a live landing page, and a VSL outline. Yours to keep either way.</p>
+    </header>
+
+    <!-- ============ STATS ============ -->
+    <section class="stats-bar reveal">
+        <div class="stat">
+            <span class="value" data-count="12">0</span>
+            <span class="label">Hours of research</span>
+        </div>
+        <div class="stat">
+            <span class="value" data-count="7">0</span>
+            <span class="label">Custom deliverables</span>
+        </div>
+        <div class="stat">
+            <span class="value" data-count="1">0</span>
+            <span class="label">Live landing page</span>
+        </div>
+    </section>
+
+    <!-- ============ DELIVERABLES ============ -->
+    <section class="deliverables">
+        <div class="section-title reveal">
+            <span class="kicker">The Package</span>
+            <h2>Five deliverables, one pitch.</h2>
+            <p>Expand each section to see what's inside. Every asset is built for your business, not a template.</p>
+        </div>
+
+        <div class="accordion">
+
+            <!-- 01 Research -->
+            <div class="acc-item reveal">
+                <button class="acc-head">
+                    <div class="acc-head-left">
+                        <span class="acc-num">01</span>
+                        <div>
+                            <div class="acc-title">Research Snapshot</div>
+                            <div class="acc-meta">Audience · Gaps · Recommendations</div>
+                        </div>
+                    </div>
+                    <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <h4>What you're doing well</h4>
+                        <p>A clear niche (vintage and '90s menswear style UGC) in a category dominated by generic lifestyle content. Your feed IS the proof that your method works. That's a rare asset in the UGC-coach space.</p>
+
+                        <h4>Primary audience (who's actually reading your pitch)</h4>
+                        <p>Aspiring UGC creators, 18-30, style-interested, already posting for free, stuck between $30 platform gigs and the real money. They trust creators who look like they live the lifestyle they teach. That's you.</p>
+
+                        <h4>The five gaps we identified</h4>
+                        <div class="gap-card"><strong>01 · No VSL or long-form pitch page.</strong> Cold traffic lands on a Stan Store card with no story, proof, or objection handling. Only the warmest prospects convert.</div>
+                        <div class="gap-card"><strong>02 · No funnel.</strong> No email capture, no lead magnet, no nurture sequence. First-visit non-buyers (roughly 95% of traffic) leave and never come back.</div>
+                        <div class="gap-card"><strong>03 · No community product.</strong> One-time course sales cap LTV. A free or paid community layer adds recurring revenue and retention.</div>
+                        <div class="gap-card"><strong>04 · No social-proof display.</strong> Student wins don't have a home. Every objection hits harder without them.</div>
+                        <div class="gap-card"><strong>05 · No retargeting.</strong> No pixel on the Stan Store page, no way to re-engage visitors through ads or email.</div>
+
+                        <h4>What this package fixes first</h4>
+                        <p>The top of the list. A landing page that sells. A lead magnet that captures. A VSL outline and ad scripts that drive traffic to both.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 02 Angles -->
+            <div class="acc-item reveal">
+                <button class="acc-head">
+                    <div class="acc-head-left">
+                        <span class="acc-num">02</span>
+                        <div>
+                            <div class="acc-title">Campaign Angles</div>
+                            <div class="acc-meta">5 positioning frames, your voice</div>
+                        </div>
+                    </div>
+                    <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>Five angles to rotate through paid ads, organic content, and email. Each one lands a different segment of your audience.</p>
+                        <div class="angles-grid">
+                            <div class="angle-item">
+                                <div class="a-name">Angle 01 · The Pitch, Not the Platform</div>
+                                <div class="a-head">Stop applying to UGC platforms. Start pitching brands.</div>
+                                <div class="a-hook">Platforms pay $30 because they can. Brands pay $500 because they need the content. You're losing money every time you refresh Insense instead of sending a cold DM.</div>
+                            </div>
+                            <div class="angle-item">
+                                <div class="a-name">Angle 02 · The Niche Wedge</div>
+                                <div class="a-head">The UGC creators making real money all have one thing in common.</div>
+                                <div class="a-hook">A niche. Not a follower count. Not a studio setup. A niche. Built around vintage menswear and the brand deals followed the aesthetic.</div>
+                            </div>
+                            <div class="angle-item">
+                                <div class="a-name">Angle 03 · The Friend Who Does It</div>
+                                <div class="a-head">Most UGC coaches aren't actually UGC creators.</div>
+                                <div class="a-hook">I teach this because I live it. Every spot has been filled by someone who watched my content for months before paying a dollar.</div>
+                            </div>
+                            <div class="angle-item">
+                                <div class="a-name">Angle 04 · The First-Brand Barrier</div>
+                                <div class="a-head">Your first paid brand deal is 90% of the fight.</div>
+                                <div class="a-hook">Not because it's hard. Because nobody tells you what actually goes in the pitch. Template, shot list, price sheet, follow-up script.</div>
+                            </div>
+                            <div class="angle-item">
+                                <div class="a-name">Angle 05 · You Already Have the Eye</div>
+                                <div class="a-head">You already have the eye. You just don't have the pipeline.</div>
+                                <div class="a-hook">If you've ever rebuilt your closet around a single jacket, you have what brands pay for. Taste is the rare part. Pipeline is teachable.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03 Ads -->
+            <div class="acc-item reveal">
+                <button class="acc-head">
+                    <div class="acc-head-left">
+                        <span class="acc-num">03</span>
+                        <div>
+                            <div class="acc-title">Ad Script Concepts</div>
+                            <div class="acc-meta">3 formats · Your voice · Film-in-a-day</div>
+                        </div>
+                    </div>
+                    <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>Three short-form scripts, each in a different format. Shot in one afternoon with the same lighting setup and one outfit change.</p>
+
+                        <h4>Script 01 · Direct response</h4>
+                        <div class="script-block">
+                            <strong>Hook:</strong> "Most aspiring UGC creators are playing the wrong game. They're refreshing Insense hoping a $30 gig drops."<br><br>
+                            <strong>Body:</strong> "I did that my first month. Zero. Then I changed one thing. I stopped waiting for brands to find me and I started pitching them directly. I picked a niche I actually wear. I made five pieces of content that looked like their brand. I sent those in a DM with a price and a delivery date. First brand said yes."<br><br>
+                            <strong>CTA:</strong> "Link in bio. Pitch like a pro, not a platform user."
+                        </div>
+
+                        <h4>Script 02 · Proof-led</h4>
+                        <div class="script-block">
+                            <strong>Hook:</strong> "This jacket paid $1,200. Not because I bought it. Because I pitched it."<br><br>
+                            <strong>Body:</strong> "Brands don't pay for followers. They pay for content that makes their product look like the kind of thing you'd wear. The difference between a $30 gig and a $500 deal is the pitch, not the reach."<br><br>
+                            <strong>CTA:</strong> "Link in bio. Pitch template is in module one."
+                        </div>
+
+                        <h4>Script 03 · Educational</h4>
+                        <div class="script-block">
+                            <strong>Hook:</strong> "Three things every UGC pitch needs. None of them are a follower count."<br><br>
+                            <strong>Body:</strong> "One, a shot list. Brands want to see what you'll make before they pay. Two, a price with an anchor: '$500 for three pieces, $800 for five.' Three, a delivery date: 'shot by Friday.' Do those three and your reply rate goes 2% to 20%."<br><br>
+                            <strong>CTA:</strong> "Full system in bio."
+                        </div>
+
+                        <p style="margin-top:16px;font-size:13px;color:var(--gray);"><em>Full scripts, filming notes, and pricing anchors live in the package file.</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 Landing Page -->
+            <div class="acc-item reveal">
+                <button class="acc-head">
+                    <div class="acc-head-left">
+                        <span class="acc-num">04</span>
+                        <div>
+                            <div class="acc-title">Landing Page (live)</div>
+                            <div class="acc-meta">Hero · Problem · Mechanism · Proof · Offer · FAQ</div>
+                        </div>
+                    </div>
+                    <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>A complete landing page designed around your brand. Cream background, charcoal ink, serif headlines. Mobile-first. Scroll-reveal animations. FAQ accordion. Ready to host today.</p>
+
+                        <h4>Sections in order</h4>
+                        <ul>
+                            <li><strong>Sticky nav</strong> with logo and "Get The Course" CTA</li>
+                            <li><strong>Hero</strong>: "Stop pitching platforms. Start picking brands." with three meta stats</li>
+                            <li><strong>Problem block</strong>: three reasons most aspiring UGC creators stay stuck</li>
+                            <li><strong>The Method</strong>: your three-part pitch framework, side-by-side with a pull quote</li>
+                            <li><strong>Proof</strong>: testimonial cards (placeholders for your real student quotes)</li>
+                            <li><strong>Lead magnet opt-in</strong>: the 3-Paragraph Pitch Template</li>
+                            <li><strong>Offer card</strong>: course + bonuses + price + guarantee</li>
+                            <li><strong>Authority / About</strong>: short-form bio linking to your feed</li>
+                            <li><strong>Dark final CTA</strong>: one last push to enroll</li>
+                            <li><strong>FAQ accordion</strong>: six honest answers to the real objections</li>
+                        </ul>
+
+                        <h4>What to fill in before you push it live</h4>
+                        <ul>
+                            <li>Course price in the offer card</li>
+                            <li>Real student testimonials (three slots)</li>
+                            <li>Your guarantee copy</li>
+                            <li>Hero product image or photograph of you (swap the placeholder gradient)</li>
+                        </ul>
+
+                        <a href="https://henryqueroa.github.io/thesilveryouth-package/landing-page.html" class="acc-cta" target="_blank" rel="noopener">
+                            View The Live Landing Page
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 05 VSL -->
+            <div class="acc-item reveal">
+                <button class="acc-head">
+                    <div class="acc-head-left">
+                        <span class="acc-num">05</span>
+                        <div>
+                            <div class="acc-title">VSL Outline</div>
+                            <div class="acc-meta">6 sections · 380 words · Ready to expand</div>
+                        </div>
+                    </div>
+                    <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>A full 6-section VSL outline. Ready to expand into a 1,200-1,800 word shooting script. Target runtime 6-9 minutes.</p>
+
+                        <h4>01 · Hook (0:00 - 0:20)</h4>
+                        <p>Open with the $1,200 jacket. No intro, no "hey guys." Straight into the flex.</p>
+
+                        <h4>02 · Problem / agitation (0:20 - 1:40)</h4>
+                        <p>Name the real problem. It's not the follower count. It's the pitch. Land the feeling: "You keep posting, brands keep ignoring you, and you don't know if it's the content or the approach."</p>
+
+                        <h4>03 · Solution / mechanism (1:40 - 3:00)</h4>
+                        <p>Introduce the three-part pitch: shot list, price anchor, delivery date. Reframe niche from a limit to a specialty brands want.</p>
+
+                        <h4>04 · Credibility (3:00 - 4:15)</h4>
+                        <p>Your own track record. Your feed as public proof. Student wins (real or placeholder). Anti-guru beat.</p>
+
+                        <h4>05 · Offer (4:15 - 6:30)</h4>
+                        <p>Course, bonuses, community (if applicable), price, guarantee. Frame price against a single paid deal.</p>
+
+                        <h4>06 · Close (6:30 - 8:00)</h4>
+                        <p>Scarcity-free CTA. "Every week you don't pitch is a week a brand doesn't know you exist."</p>
+
+                        <p style="margin-top:16px;font-size:13px;color:var(--gray);"><em>This outline can be expanded into a full shooting script in 2-3 hours, then filmed in a single afternoon.</em></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="process">
+        <div class="section-title reveal">
+            <span class="kicker">How Zytrom Builds</span>
+            <h2>Diagnose first. Build second.</h2>
+            <p>Most agencies plug in a template. We find the bottleneck, then fix the system around it.</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-card reveal">
+                <span class="p-num">i.</span>
+                <h3>Diagnose</h3>
+                <p>We map the full customer acquisition chain and find the single constraint hurting growth.</p>
+            </div>
+            <div class="process-card reveal">
+                <span class="p-num">ii.</span>
+                <h3>Prescribe</h3>
+                <p>A clear scope of what to fix first. No 18-month roadmaps. The one thing that unlocks the next thing.</p>
+            </div>
+            <div class="process-card reveal">
+                <span class="p-num">iii.</span>
+                <h3>Build</h3>
+                <p>Offer, messaging, funnel, ads, lead qualification. Whatever the diagnosis called for, executed end-to-end.</p>
+            </div>
+            <div class="process-card reveal">
+                <span class="p-num">iv.</span>
+                <h3>Iterate</h3>
+                <p>Weekly reporting. Test, measure, remove what doesn't work, double down on what does.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="final-cta reveal">
+        <h2>Ready to <span>implement this?</span></h2>
+        <p>Everything above was built specifically for The Silver Youth. Imagine what we could do working together.</p>
+        <a href="mailto:hello@zytrom.com?subject=Let's%20talk%20about%20The%20Silver%20Youth%20package" class="cta-btn">
+            Book A 15-Minute Call
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <div class="cta-note">No pitch deck. No sales pressure. Just a conversation.</div>
+    </section>
+
+</div>
+
+<footer>
+    <div class="container">
+        Zytrom · Built for The Silver Youth · Apr 2026
+    </div>
+</footer>
+
+<script>
+    // Scroll reveal
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Stats count-up
+    const statObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                const target = parseInt(el.dataset.count, 10);
+                const duration = 1200;
+                const start = performance.now();
+                const update = (now) => {
+                    const t = Math.min((now - start) / duration, 1);
+                    const val = Math.round(t * target);
+                    el.childNodes[0].nodeValue = val;
+                    if (t < 1) requestAnimationFrame(update);
+                };
+                requestAnimationFrame(update);
+                statObs.unobserve(el);
+            }
+        });
+    }, { threshold: 0.4 });
+    document.querySelectorAll('.stat .value').forEach(el => statObs.observe(el));
+
+    // Accordion
+    document.querySelectorAll('.acc-head').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            item.classList.toggle('open');
+        });
+    });
+</script>
+
+</body>
+</html>
