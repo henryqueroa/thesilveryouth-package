@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replay | The 90-Day Creator Bet</title>
+    <meta name="description" content="The replay of The 90-Day Creator Bet is up for 48 hours. First edition exception.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f4f0e8; --bg-warm: #ebe4d4; --ink: #1a1a1a; --ink-soft: #3a3530;
+            --silver: #8a8a8a; --warm: #8b5a3c; --warm-light: #a3694a;
+            --muted: #d9d2c4; --border: rgba(26,26,26,0.1); --gold: #c9a27a;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        h1, h2 { font-family: 'Fraunces', Georgia, serif; letter-spacing: -0.02em; line-height: 1.12; }
+        .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+        .nav { padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); text-decoration: none; }
+        .logo em { font-style: italic; color: var(--warm); }
+        .nav-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--silver); }
+
+        .hero { padding: 34px 0 10px; text-align: center; }
+        .eyebrow { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--warm); margin-bottom: 14px; }
+        .hero h1 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 10px; }
+        .hero h1 em { font-style: italic; font-weight: 500; color: var(--warm); }
+        .hero p { font-size: 15.5px; color: var(--ink-soft); max-width: 560px; margin: 0 auto; }
+
+        .countdown { display: flex; justify-content: center; gap: 14px; padding: 22px 0 6px; }
+        .cd-cell { background: var(--ink); color: var(--bg); border-radius: 4px; min-width: 86px; padding: 14px 10px 12px; text-align: center; }
+        .cd-num { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 700; line-height: 1; color: var(--gold); }
+        .cd-lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(244,240,232,0.5); margin-top: 6px; }
+        .cd-expired { display: none; text-align: center; padding: 18px 0 4px; font-size: 15px; color: var(--warm); font-weight: 600; }
+
+        .video-wrap { padding: 26px 0 0; }
+        .video-outer { position: relative; width: 100%; aspect-ratio: 16/9; background: var(--ink); border-radius: 4px; overflow: hidden; box-shadow: 0 24px 64px rgba(26,26,26,0.22); }
+        .video-placeholder { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1a1a 0%, #2f2820 50%, #1a1a1a 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+        .play-btn { width: 68px; height: 68px; border-radius: 50%; background: var(--warm); display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(139,90,60,0.45); }
+        .video-label { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: rgba(244,240,232,0.6); }
+        .video-note { position: absolute; bottom: 12px; right: 14px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: rgba(244,240,232,0.3); }
+
+        .cta-block { text-align: center; padding: 36px 0 20px; }
+        .btn-main { display: inline-flex; align-items: center; gap: 10px; padding: 19px 42px; background: var(--warm); color: var(--bg); font-size: 16px; font-weight: 700; border-radius: 2px; text-decoration: none; transition: all 0.25s ease; box-shadow: 0 8px 28px rgba(139,90,60,0.28); }
+        .btn-main:hover { background: var(--warm-light); transform: translateY(-2px); }
+        .cta-sub { margin-top: 12px; font-size: 13px; color: var(--silver); font-style: italic; }
+        .confirm-flag { display: inline-block; margin-top: 12px; font-size: 11px; color: var(--warm); border: 1px dashed var(--warm); border-radius: 3px; padding: 3px 10px; letter-spacing: 0.5px; }
+
+        .chapters { padding: 30px 0 54px; }
+        .chapters h2 { text-align: center; font-size: clamp(20px, 2.6vw, 26px); margin-bottom: 22px; }
+        .chap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 720px; margin: 0 auto; }
+        .chap { background: #fff; border: 1px solid var(--border); border-radius: 4px; padding: 18px 20px; }
+        .chap .t { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--warm); font-weight: 700; margin-bottom: 6px; }
+        .chap .d { font-size: 13.5px; color: var(--ink-soft); }
+
+        footer { background: var(--ink); padding: 26px 0; text-align: center; font-size: 12px; color: rgba(244,240,232,0.35); }
+        footer a { color: rgba(244,240,232,0.55); text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+
+        @media (max-width: 640px) {
+            .cd-cell { min-width: 70px; }
+            .chap-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <a href="../" class="logo">The <em>Silver</em> Youth</a>
+        <span class="nav-tag">Replay · 48h</span>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <span class="eyebrow">First Edition Exception · Route B Demo</span>
+        <h1>the replay is up. <em>for 48 hours.</em></h1>
+        <p>life happens, so here's the full class: the receipts, the three mechanisms, dev's whole first deal, and the Q&A. when the counter hits zero, it comes down for real.</p>
+    </div>
+</section>
+
+<div class="countdown" id="countdown">
+    <div class="cd-cell"><div class="cd-num" id="cd-h">48</div><div class="cd-lbl">hours</div></div>
+    <div class="cd-cell"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl">minutes</div></div>
+    <div class="cd-cell"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl">seconds</div></div>
+</div>
+<p class="cd-expired" id="cd-expired">the replay window has closed. the free guide is still yours on @thesilveryouth.</p>
+
+<section class="video-wrap">
+    <div class="container">
+        <div class="video-outer">
+            <div class="video-placeholder">
+                <div class="play-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="#f4f0e8"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="video-label">replay video slot · full class recording</span>
+            </div>
+            <span class="video-note">[replace with recording embed]</span>
+        </div>
+    </div>
+</section>
+
+<section class="cta-block">
+    <div class="container">
+        <a href="#" class="btn-main">join the silver youth →</a>
+        <p class="cta-sub">founding price $[PRICE] rides with the replay window.</p>
+        <br>
+        <span class="confirm-flag">[CONFIRM checkout URL + price]</span>
+    </div>
+</section>
+
+<section class="chapters">
+    <div class="container">
+        <h2>jump to the part you need</h2>
+        <div class="chap-grid">
+            <div class="chap"><div class="t">the receipts</div><div class="d">the dashboards, the $3,063 day, and why "people say i'm lying" is fine.</div></div>
+            <div class="chap"><div class="t">the 3 mechanisms</div><div class="d">the content engine, the brand bridge, the room. the whole system.</div></div>
+            <div class="chap"><div class="t">the close + Q&A</div><div class="d">what the silver youth includes, the founding deal, and every question answered.</div></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © The Silver Youth · <a href="https://www.instagram.com/thesilveryouth/">@thesilveryouth</a>
+    </div>
+</footer>
+
+<script>
+    // 48h replay window persisted per-visitor (Route B demo)
+    var KEY = 'tsy-replay-start';
+    var WINDOW_MS = 48 * 60 * 60 * 1000;
+    var start;
+    try {
+        start = parseInt(localStorage.getItem(KEY), 10);
+        if (!start || isNaN(start)) { start = Date.now(); localStorage.setItem(KEY, String(start)); }
+    } catch (e) { start = Date.now(); }
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+    function tick() {
+        var left = start + WINDOW_MS - Date.now();
+        if (left <= 0) {
+            document.getElementById('countdown').style.display = 'none';
+            document.getElementById('cd-expired').style.display = 'block';
+            return;
+        }
+        var h = Math.floor(left / 3600000);
+        var m = Math.floor((left % 3600000) / 60000);
+        var s = Math.floor((left % 60000) / 1000);
+        document.getElementById('cd-h').textContent = pad(h);
+        document.getElementById('cd-m').textContent = pad(m);
+        document.getElementById('cd-s').textContent = pad(s);
+        setTimeout(tick, 1000);
+    }
+    tick();
+</script>
+
+</body>
+</html>

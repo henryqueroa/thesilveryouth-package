@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're In | The 90-Day Creator Bet</title>
+    <meta name="description" content="Your seat is saved. Five quick steps to make sure you actually show up (and get the most out of it).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f4f0e8; --bg-warm: #ebe4d4; --ink: #1a1a1a; --ink-soft: #3a3530;
+            --silver: #8a8a8a; --warm: #8b5a3c; --warm-light: #a3694a;
+            --muted: #d9d2c4; --border: rgba(26,26,26,0.1); --gold: #c9a27a;
+        }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; letter-spacing: -0.02em; line-height: 1.15; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+        .nav { padding: 16px 0; border-bottom: 1px solid var(--border); }
+        .nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); text-decoration: none; }
+        .logo em { font-style: italic; color: var(--warm); }
+        .nav-tag { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--silver); }
+
+        .hero { padding: 38px 0 10px; text-align: center; }
+        .eyebrow { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--warm); margin-bottom: 14px; }
+        .hero h1 { font-size: clamp(28px, 4vw, 42px); margin-bottom: 12px; }
+        .hero h1 em { font-style: italic; font-weight: 500; color: var(--warm); }
+        .hero p { font-size: 16px; color: var(--ink-soft); max-width: 560px; margin: 0 auto; }
+        .hero .when { margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+        .hero .when .dot { color: var(--warm); margin: 0 8px; }
+
+        .steps { padding: 34px 0 56px; }
+        .step { background: #fff; border: 1px solid var(--border); border-radius: 4px; padding: 26px 28px; margin-bottom: 16px; display: grid; grid-template-columns: 44px 1fr; gap: 18px; }
+        .step-num { width: 44px; height: 44px; border-radius: 50%; background: var(--warm); color: var(--bg); font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+        .step h3 { font-size: 19px; margin-bottom: 6px; }
+        .step p { font-size: 14.5px; color: var(--ink-soft); margin-bottom: 12px; }
+        .step p em { color: var(--warm); }
+
+        .video-slot { position: relative; width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #1a1a1a 0%, #2f2820 50%, #1a1a1a 100%); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; margin-top: 4px; }
+        .play-btn { width: 56px; height: 56px; border-radius: 50%; background: var(--warm); display: flex; align-items: center; justify-content: center; }
+        .video-label { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: rgba(244,240,232,0.6); }
+        .video-note { position: absolute; bottom: 10px; right: 12px; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: rgba(244,240,232,0.3); }
+
+        .survey-row { display: flex; gap: 10px; flex-wrap: wrap; }
+        .survey-btn { padding: 12px 20px; border: 1px solid var(--border); background: var(--bg); border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: var(--ink-soft); cursor: pointer; transition: all 0.2s ease; }
+        .survey-btn:hover { border-color: var(--warm); color: var(--warm); }
+        .survey-btn.picked { background: var(--warm); border-color: var(--warm); color: var(--bg); }
+        .survey-thanks { display: none; font-size: 13px; color: var(--warm); font-style: italic; margin-top: 10px; }
+
+        .cal-row { display: flex; gap: 10px; flex-wrap: wrap; }
+        .cal-btn { display: inline-block; padding: 12px 20px; background: var(--ink); color: var(--bg); font-size: 13.5px; font-weight: 600; border-radius: 3px; text-decoration: none; transition: background 0.2s ease; }
+        .cal-btn:hover { background: var(--warm); }
+        .confirm-flag { display: inline-block; margin-top: 10px; font-size: 11px; color: var(--warm); border: 1px dashed var(--warm); border-radius: 3px; padding: 3px 10px; letter-spacing: 0.5px; }
+
+        .phone-row { display: flex; gap: 10px; }
+        .phone-row input { flex: 1; padding: 14px 16px; border-radius: 3px; border: 1px solid var(--border); background: #fff; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--ink); }
+        .phone-row input:focus { outline: none; border-color: var(--warm); }
+        .phone-btn { padding: 14px 22px; background: var(--warm); color: var(--bg); border: none; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; transition: background 0.2s ease; }
+        .phone-btn:hover { background: var(--warm-light); }
+        .phone-done { display: none; font-size: 13px; color: var(--warm); font-style: italic; margin-top: 10px; }
+
+        footer { background: var(--ink); padding: 26px 0; text-align: center; font-size: 12px; color: rgba(244,240,232,0.35); }
+        footer a { color: rgba(244,240,232,0.55); text-decoration: none; }
+        footer a:hover { color: var(--gold); }
+
+        @media (max-width: 640px) {
+            .step { grid-template-columns: 36px 1fr; padding: 20px 18px; }
+            .step-num { width: 36px; height: 36px; font-size: 17px; }
+            .phone-row { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="container">
+        <a href="../../" class="logo">The <em>Silver</em> Youth</a>
+        <span class="nav-tag">Seat Saved</span>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <span class="eyebrow">The 90-Day Creator Bet</span>
+        <h1>you're in<span id="greet-name"></span>. <em>now make it count.</em></h1>
+        <p>registering was the easy part. the people who get results are the ones in the room. these five steps take three minutes and make sure that's you.</p>
+        <p class="when">[EVENT DATE · CONFIRM]<span class="dot">·</span>[EVENT TIME]<span class="dot">·</span>Live on Zoom</p>
+    </div>
+</section>
+
+<section class="steps">
+    <div class="container">
+
+        <div class="step">
+            <div class="step-num">1</div>
+            <div>
+                <h3>watch this 60-second welcome</h3>
+                <p>quick hello from austin: what to bring, what you'll leave with, and why live beats replay.</p>
+                <div class="video-slot">
+                    <div class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="#f4f0e8"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                    <span class="video-label">welcome video slot · 60-120 sec</span>
+                    <span class="video-note">[CONFIRM recording with Austin]</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">2</div>
+            <div>
+                <h3>one question: where are you at?</h3>
+                <p>this decides what i prep extra for the Q&A. one tap, honest answer.</p>
+                <div class="survey-row">
+                    <button class="survey-btn" data-v="watching">just watching so far</button>
+                    <button class="survey-btn" data-v="posting">posting, no money yet</button>
+                    <button class="survey-btn" data-v="pitching">pitching, no yes yet</button>
+                </div>
+                <p class="survey-thanks" id="survey-thanks">got it. i'll build the Q&A around answers like yours.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">3</div>
+            <div>
+                <h3>put it on your calendar, right now</h3>
+                <p>future you forgets. calendar you shows up.</p>
+                <div class="cal-row">
+                    <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+90-Day+Creator+Bet+%C2%B7+Austin+Tesch&details=Free+live+masterclass.+Link+arrives+by+email." target="_blank" rel="noopener">+ Google Calendar</a>
+                    <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The+90-Day+Creator+Bet+%C2%B7+Austin+Tesch&details=Free+live+masterclass.+Link+arrives+by+email." target="_blank" rel="noopener">+ Apple / Outlook (.ics)</a>
+                </div>
+                <span class="confirm-flag">[CONFIRM date/time → wire real calendar links]</span>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">4</div>
+            <div>
+                <h3>reply YES to my first email</h3>
+                <p>i just sent you an email with your seat info. open it and reply <em>YES</em>, one word. that tells your inbox i'm a real person, so the class link doesn't land in spam on the day it matters.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-num">5</div>
+            <div>
+                <h3>want a text when we're live?</h3>
+                <p>this is the only thing your number gets used for: a reminder the day before, and the link when we go live. nothing else, ever.</p>
+                <div class="phone-row">
+                    <input type="tel" id="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+                    <button class="phone-btn" id="phone-submit">text me when it's live</button>
+                </div>
+                <p class="phone-done" id="phone-done">done. you'll get exactly 4 texts, all about the class.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © The Silver Youth · <a href="https://www.instagram.com/thesilveryouth/">@thesilveryouth</a>
+    </div>
+</footer>
+
+<script>
+    // Greet with the registered first name if present
+    try {
+        var n = localStorage.getItem('tsy-reg-name');
+        if (n) document.getElementById('greet-name').textContent = ', ' + n.toLowerCase();
+    } catch (e) {}
+
+    // Step 2: mini-survey
+    document.querySelectorAll('.survey-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            document.querySelectorAll('.survey-btn').forEach(function (b) { b.classList.remove('picked'); });
+            btn.classList.add('picked');
+            try { localStorage.setItem('tsy-survey', btn.dataset.v); } catch (e) {}
+            document.getElementById('survey-thanks').style.display = 'block';
+        });
+    });
+
+    // Step 5: phone opt-in (demo: stores locally; wire to SMS provider on launch)
+    document.getElementById('phone-submit').addEventListener('click', function () {
+        var p = document.getElementById('phone').value.trim();
+        if (!p) return;
+        try { localStorage.setItem('tsy-phone', p); } catch (e) {}
+        document.getElementById('phone-done').style.display = 'block';
+    });
+</script>
+
+</body>
+</html>

@@ -321,6 +321,89 @@
             color: var(--gray-light);
         }
 
+        /* ========== DECK VIEWER ========== */
+        .deck-viewer {
+            margin: 14px 0 22px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--surface-2);
+        }
+        .deck-stage { position: relative; }
+        .deck-stage img {
+            display: block;
+            width: 100%;
+            height: auto;
+            user-select: none;
+        }
+        .deck-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(6,7,10,0.65);
+            color: var(--gold);
+            font-size: 26px;
+            line-height: 1;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .deck-nav:hover { background: rgba(6,7,10,0.9); }
+        .deck-prev { left: 12px; }
+        .deck-next { right: 12px; }
+        .deck-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 16px;
+            border-top: 1px solid var(--border);
+        }
+        .deck-count { font-size: 12px; color: var(--gray); letter-spacing: 1px; }
+        .deck-expand {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--gray-light);
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .deck-expand:hover { border-color: var(--border-hover); color: var(--gold); }
+        .deck-lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(4,5,7,0.94);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 14px;
+            padding: 24px;
+        }
+        .deck-lightbox.on { display: flex; }
+        .deck-lightbox img {
+            max-width: min(1280px, 96vw);
+            max-height: 84vh;
+            border-radius: 8px;
+            user-select: none;
+        }
+        .deck-lightbox .lb-bar { display: flex; gap: 18px; align-items: center; color: var(--gray-light); font-size: 13px; }
+        .deck-lightbox .lb-bar button {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--gray-light);
+            padding: 8px 18px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .deck-lightbox .lb-bar button:hover { color: var(--gold); border-color: var(--border-hover); }
+
         /* ========== PROCESS ========== */
         .process {
             padding: 80px 0;
@@ -456,24 +539,24 @@
             <span class="brand-divider"></span>
             <span class="brand-name brand-prospect">The Silver Youth</span>
         </div>
-        <div class="header-badge">Private Package · Apr 2026</div>
+        <div class="header-badge">Private Package · Jul 2026</div>
         <h1>Built Exclusively For<br><span>The Silver Youth.</span></h1>
-        <p class="lede">A complete marketing package created specifically for your business. Research, campaign angles, ad scripts, a live landing page, and a VSL outline. Yours to keep either way.</p>
+        <p class="lede">A complete growth system built specifically for your business: a full webinar (script, designed slide deck, live pages, email + SMS sequences), a rebuilt landing page, campaign angles, ad scripts, and a VSL outline. Everything anchored in your real story and your posted receipts. Yours to keep either way.</p>
     </header>
 
     <!-- ============ STATS ============ -->
     <section class="stats-bar reveal">
         <div class="stat">
-            <span class="value" data-count="12">0</span>
-            <span class="label">Hours of research</span>
+            <span class="value" data-count="34">0</span>
+            <span class="label">Slide webinar deck</span>
         </div>
         <div class="stat">
-            <span class="value" data-count="7">0</span>
-            <span class="label">Custom deliverables</span>
+            <span class="value" data-count="24">0<span class="plus">+</span></span>
+            <span class="label">Webinar emails & SMS</span>
         </div>
         <div class="stat">
-            <span class="value" data-count="1">0</span>
-            <span class="label">Live landing page</span>
+            <span class="value" data-count="4">0</span>
+            <span class="label">Live pages</span>
         </div>
     </section>
 
@@ -481,8 +564,8 @@
     <section class="deliverables">
         <div class="section-title reveal">
             <span class="kicker">The Package</span>
-            <h2>Five deliverables, one pitch.</h2>
-            <p>Expand each section to see what's inside. Every asset is built for your business, not a template.</p>
+            <h2>Six deliverables, one system.</h2>
+            <p>Expand each section to see what's inside. Every asset is built from your real content and your posted numbers, not a template.</p>
         </div>
 
         <div class="accordion">
@@ -501,30 +584,88 @@
                 </button>
                 <div class="acc-body">
                     <div class="acc-body-inner">
-                        <h4>What you're doing well</h4>
-                        <p>You're a working UGC creator making real money from brand deals — payout highlights on IG and all. In a category full of people who teach UGC without doing it, that's the whole proof of concept. Your feed IS the pitch.</p>
+                        <h4>What you've already built (and most coaches haven't)</h4>
+                        <p>Real proof, posted publicly: your TikTok Shop dashboards ($16.6K est. commissions in March, a $3,063 one-day payout), a 48K TikTok, a verified IG, and three students with wins you posted yourself, Grace, Dev and Roo. Plus a lead magnet that already works: your "Comment UGC" reels filled up (209 comments on the top one). The demand side is done.</p>
 
-                        <h4>Primary audience (who's actually reading your pitch)</h4>
-                        <p>Aspiring UGC creators, 18-30, style-interested, already posting for free, stuck between $30 platform gigs and the real money. They trust creators who look like they live the lifestyle they teach. That's you.</p>
+                        <h4>The gap in one line</h4>
+                        <p><em>Your funnel dies in your DMs.</em> No link in bio, no page, no email list, no paid product. Every person who raises their hand gets a manual DM, or nothing.</p>
 
-                        <h4>The five gaps we identified</h4>
-                        <div class="gap-card"><strong>01 · No VSL or long-form pitch page.</strong> Cold traffic lands on a Stan Store card with no story, proof, or objection handling. Only the warmest prospects convert.</div>
-                        <div class="gap-card"><strong>02 · No funnel.</strong> No email capture, no lead magnet, no nurture sequence. First-visit non-buyers (roughly 95% of traffic) leave and never come back.</div>
-                        <div class="gap-card"><strong>03 · No community product.</strong> One-time course sales cap LTV. A free or paid community layer adds recurring revenue and retention.</div>
-                        <div class="gap-card"><strong>04 · No social-proof display.</strong> Student wins don't have a home. Every objection hits harder without them.</div>
-                        <div class="gap-card"><strong>05 · No retargeting.</strong> No pixel on the Stan Store page, no way to re-engage visitors through ads or email.</div>
+                        <h4>The five gaps, specifically</h4>
+                        <div class="gap-card"><strong>01 · No capture.</strong> Comment-to-DM means you own nothing: no email, no retargeting, no follow-up when you launch. The free guide deserves a front door.</div>
+                        <div class="gap-card"><strong>02 · No conversion event.</strong> You have proof and attention but nothing that turns them into buyers. That's the webinar (deliverable 02, built end-to-end).</div>
+                        <div class="gap-card"><strong>03 · Nothing to buy.</strong> You already coach people free in Discord. The community + course your own poll validated still doesn't exist as a product.</div>
+                        <div class="gap-card"><strong>04 · Proof without a home.</strong> The Wins highlight is an arsenal, but only existing followers ever see it. The landing page and webinar give it a permanent job.</div>
+                        <div class="gap-card"><strong>05 · Momentum leaks.</strong> Your May sprint (15 reels in 12 days, one at 889K views) had nowhere to land, and the engine has been quiet since June 4. A system catches what the next sprint creates.</div>
 
                         <h4>What this package fixes first</h4>
-                        <p>The top of the list. A landing page that sells. A lead magnet that captures. A VSL outline and ad scripts that drive traffic to both.</p>
+                        <p>The middle of the funnel: registration page captures the guide demand, the webinar converts it, the Discord product monetizes it, and the emails do the following up. Your content stays exactly as it is. It already works.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 02 Angles -->
-            <div class="acc-item reveal">
+            <!-- 02 Webinar System -->
+            <div class="acc-item reveal" id="webinar-block">
                 <button class="acc-head">
                     <div class="acc-head-left">
                         <span class="acc-num">02</span>
+                        <div>
+                            <div class="acc-title">The Webinar System · "The 90-Day Creator Bet"</div>
+                            <div class="acc-meta">Full script · 34-slide deck · 3 live pages · 24+ emails & SMS</div>
+                        </div>
+                    </div>
+                    <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <div class="acc-body">
+                    <div class="acc-body-inner">
+                        <p>The centerpiece. A complete live masterclass built on your real story: the 90-day bet, your posted receipts, and your students' wins. It converts the demand your comment-gates already create into an email list and members of the paid community + course inside your existing Discord. Price, date and product name are marked <em>[CONFIRM]</em> for you; everything else is done.</p>
+
+                        <h4>The deck (flip through it)</h4>
+                        <div class="deck-viewer" id="deck-viewer">
+                            <div class="deck-stage">
+                                <img id="deckImg" src="images/slides/slide-01.png" alt="Webinar deck slide" draggable="false">
+                                <button class="deck-nav deck-prev" id="deckPrev" aria-label="Previous slide">‹</button>
+                                <button class="deck-nav deck-next" id="deckNext" aria-label="Next slide">›</button>
+                            </div>
+                            <div class="deck-bar">
+                                <span class="deck-count" id="deckCount">1 / 34</span>
+                                <button class="deck-expand" id="deckExpand">Expand ⤢</button>
+                            </div>
+                        </div>
+
+                        <h4>What's in the system</h4>
+                        <ul>
+                            <li><strong>The script</strong>: 8 segments, 60-75 minutes, slide-by-slide, in your voice. Opens on your manifesto, answers "people say I'm lying" with your own screens, closes on the Discord offer.</li>
+                            <li><strong>The deck</strong>: 34 slides in your brand, mapped 1:1 to the script. Proof slides are marked slots for screen-recordings of your real posts.</li>
+                            <li><strong>3 live pages</strong>: registration (3 fields, no phone), confirmation (5 steps, phone captured there), and a 48h replay demo.</li>
+                            <li><strong>24+ emails & SMS</strong>: 10 pre-event emails, 4 texts, and two complete post-event routes (no-replay + Pop-Up, or 48h replay).</li>
+                            <li><strong>The operating manual</strong>: show-rate system (40%+ target), replay decision, bonus window, KPIs.</li>
+                        </ul>
+
+                        <a href="https://henryqueroa.github.io/thesilveryouth-package/webinar/" class="acc-cta" target="_blank" rel="noopener">
+                            View The Live Registration Page
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="https://henryqueroa.github.io/thesilveryouth-package/webinar/confirmacion/" class="acc-cta" target="_blank" rel="noopener" style="margin-left:10px;">
+                            Confirmation Page
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="https://henryqueroa.github.io/thesilveryouth-package/webinar/replay.html" class="acc-cta" target="_blank" rel="noopener" style="margin-left:10px;">
+                            Replay Demo
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <a href="https://henryqueroa.github.io/thesilveryouth-package/webinar/thesilveryouth-webinar-deck.pdf" class="acc-cta" target="_blank" rel="noopener" style="margin-left:10px;">
+                            Deck PDF
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 03 Angles -->
+            <div class="acc-item reveal">
+                <button class="acc-head">
+                    <div class="acc-head-left">
+                        <span class="acc-num">03</span>
                         <div>
                             <div class="acc-title">Campaign Angles</div>
                             <div class="acc-meta">5 positioning frames, your voice</div>
@@ -534,43 +675,43 @@
                 </button>
                 <div class="acc-body">
                     <div class="acc-body-inner">
-                        <p>Five angles to rotate through paid ads, organic content, and email. Each one lands a different segment of your audience.</p>
+                        <p>Five angles to rotate through paid ads, organic content, and email. Every proof point is something you've posted; every hook is in your voice.</p>
                         <div class="angles-grid">
                             <div class="angle-item">
-                                <div class="a-name">Angle 01 · The Pitch, Not the Platform</div>
-                                <div class="a-head">Stop applying to UGC platforms. Start pitching brands.</div>
-                                <div class="a-hook">Platforms pay $30 because they can. Brands pay $500 because they need the content. You're losing money every time you refresh Insense instead of sending a cold DM.</div>
+                                <div class="a-name">Angle 01 · The 90-Day Bet (canonical)</div>
+                                <div class="a-head">bet 90 days on yourself.</div>
+                                <div class="a-hook">Your pinned reel, turned into the package-wide hook. Ad and organic funnel tell one story: dropout, 90 days, first five-figure month. Identity-led, perfect cold open.</div>
                             </div>
                             <div class="angle-item">
-                                <div class="a-name">Angle 02 · The Niche Wedge</div>
-                                <div class="a-head">The UGC creators making real money all have one thing in common.</div>
-                                <div class="a-hook">A niche. Not a follower count. Not a studio setup. A lane they own. Pick yours first and the brand deals follow. That's the first thing we build inside the course.</div>
+                                <div class="a-name">Angle 02 · They Say I'm Lying</div>
+                                <div class="a-head">people tell me i'm lying. good.</div>
+                                <div class="a-hook">Turns the audience's #1 objection into the hook and answers it your way: receipts on screen. Strongest for skeptical retargeting.</div>
                             </div>
                             <div class="angle-item">
-                                <div class="a-name">Angle 03 · The Friend Who Does It</div>
-                                <div class="a-head">Most UGC coaches aren't actually UGC creators.</div>
-                                <div class="a-hook">I teach this because I live it. Every spot has been filled by someone who watched my content for months before paying a dollar.</div>
+                                <div class="a-name">Angle 03 · Your Comments Are Full</div>
+                                <div class="a-head">commenting "UGC" was step zero. here's step one.</div>
+                                <div class="a-hook">Speaks straight to the warm pool your comment-gates created. Converts an existing behavior (commenting) into the next one (joining).</div>
                             </div>
                             <div class="angle-item">
-                                <div class="a-name">Angle 04 · The First-Brand Barrier</div>
-                                <div class="a-head">Your first paid brand deal is 90% of the fight.</div>
-                                <div class="a-hook">Not because it's hard. Because nobody tells you what actually goes in the pitch. Template, shot list, price sheet, follow-up script.</div>
+                                <div class="a-name">Angle 04 · The Smaller-Brands Wedge</div>
+                                <div class="a-head">the brands that will actually pay you are the ones you're ignoring.</div>
+                                <div class="a-hook">Your own teaching, backed by Dev's posted first deal: $300 from a smaller brand, negotiated live in your Discord.</div>
                             </div>
                             <div class="angle-item">
-                                <div class="a-name">Angle 05 · You Already Have the Eye</div>
-                                <div class="a-head">You already have the eye. You just don't have the pipeline.</div>
-                                <div class="a-hook">If you've ever rebuilt your closet around a single jacket, you have what brands pay for. Taste is the rare part. Pipeline is teachable.</div>
+                                <div class="a-name">Angle 05 · Anti-9-to-5, Pro-Reps</div>
+                                <div class="a-head">the 9-to-5 isn't the enemy. waiting is.</div>
+                                <div class="a-hook">Keeps your anti-corporate identity without the lazy "quit your job" trope. The May sprint (15 reels, one at 889K) is the checkable proof.</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 03 Ads -->
+            <!-- 04 Ads -->
             <div class="acc-item reveal">
                 <button class="acc-head">
                     <div class="acc-head-left">
-                        <span class="acc-num">03</span>
+                        <span class="acc-num">04</span>
                         <div>
                             <div class="acc-title">Ad Script Concepts</div>
                             <div class="acc-meta">3 formats · Your voice · Film-in-a-day</div>
@@ -580,70 +721,66 @@
                 </button>
                 <div class="acc-body">
                     <div class="acc-body-inner">
-                        <p>Three short-form scripts, each in a different format. Shot in one afternoon with the same lighting setup and one outfit change.</p>
+                        <p>Three short-form scripts, each in a different register. Every number in them is one you've posted. Film all three in one afternoon.</p>
 
-                        <h4>Script 01 · Direct response</h4>
+                        <h4>Script 01 · The Manifesto Cut (identity, cold)</h4>
                         <div class="script-block">
-                            <strong>Hook:</strong> "Most aspiring UGC creators are playing the wrong game. They're refreshing Insense hoping a $30 gig drops."<br><br>
-                            <strong>Body:</strong> "I did that my first month. Zero. Then I changed one thing. I stopped waiting for brands to find me and I started pitching them directly. I picked a niche I actually wear. I made five pieces of content that looked like their brand. I sent those in a DM with a price and a delivery date. First brand said yes."<br><br>
-                            <strong>CTA:</strong> "Link in bio. Pitch like a pro, not a platform user."
+                            <strong>Hook:</strong> "I'm a college dropout that had no direction. I gave myself 90 days. Just 90."<br><br>
+                            <strong>Spine:</strong> your pinned reel, extended: the bet, the first five-figure month, "I'm not telling you this to flex", and the turn: "someone watching this is exactly where I was."<br><br>
+                            <strong>CTA:</strong> "bet 90 days on yourself. link below."
                         </div>
 
-                        <h4>Script 02 · Proof-led</h4>
+                        <h4>Script 02 · Receipts (proof-led, skeptical retargeting)</h4>
                         <div class="script-block">
-                            <strong>Hook:</strong> "This jacket paid $1,200. Not because I bought it. Because I pitched it."<br><br>
-                            <strong>Body:</strong> "Brands don't pay for followers. They pay for content that makes their product look like the kind of thing you'd wear. The difference between a $30 gig and a $500 deal is the pitch, not the reach."<br><br>
-                            <strong>CTA:</strong> "Link in bio. Pitch template is in module one."
+                            <strong>Hook:</strong> "Every time I post a payout, somebody comments that it's fake. Cool. Let's look at the screen together."<br><br>
+                            <strong>Spine:</strong> screen-recordings of your real posts: the $3,063.17 day, the March dashboard, then your students' wins. "You don't have to believe me. You have to believe the screen."<br><br>
+                            <strong>CTA:</strong> "the receipts are public. the system is the link."
                         </div>
 
-                        <h4>Script 03 · Educational</h4>
+                        <h4>Script 03 · The Guide Reel, Extended (value-first, warm)</h4>
                         <div class="script-block">
-                            <strong>Hook:</strong> "Three things every UGC pitch needs. None of them are a follower count."<br><br>
-                            <strong>Body:</strong> "One, a shot list. Brands want to see what you'll make before they pay. Two, a price with an anchor: '$500 for three pieces, $800 for five.' Three, a delivery date: 'shot by Friday.' Do those three and your reply rate goes 2% to 20%."<br><br>
-                            <strong>CTA:</strong> "Full system in bio."
+                            <strong>Hook:</strong> "Want your first brand deal? Do this. Write it down."<br><br>
+                            <strong>Spine:</strong> your own 4-step guide reel (portfolio, example video, outreach, smaller brands) extended to 60 seconds, with the CTA moved from "comment UGC" to the link.<br><br>
+                            <strong>CTA:</strong> "four steps free. the whole system below."
                         </div>
 
-                        <p style="margin-top:16px;font-size:13px;color:var(--gray);"><em>Full scripts, filming notes, and pricing anchors live in the package file.</em></p>
+                        <p style="margin-top:16px;font-size:13px;color:var(--gray);"><em>Full scripts, filming notes and on-screen text live in the package file.</em></p>
                     </div>
                 </div>
             </div>
 
-            <!-- 04 Landing Page -->
+            <!-- 05 Landing Page -->
             <div class="acc-item reveal">
                 <button class="acc-head">
                     <div class="acc-head-left">
-                        <span class="acc-num">04</span>
+                        <span class="acc-num">05</span>
                         <div>
                             <div class="acc-title">Landing Page (live)</div>
-                            <div class="acc-meta">Hero · Problem · Mechanism · Proof · Offer · FAQ</div>
+                            <div class="acc-meta">VSL-style · Your voice · Posted proof only</div>
                         </div>
                     </div>
                     <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </button>
                 <div class="acc-body">
                     <div class="acc-body-inner">
-                        <p>A complete landing page designed around your brand. Cream background, charcoal ink, serif headlines. Mobile-first. Scroll-reveal animations. FAQ accordion. Ready to host today.</p>
+                        <p>A VSL-style sales page in your brand (cream, ink, serif headlines), rebuilt around the audit. Hero and VSL slot sit above the fold on desktop and mobile. Ready to host today; the VSL outline (deliverable 06) is the video that goes in the slot.</p>
 
                         <h4>Sections in order</h4>
                         <ul>
-                            <li><strong>Sticky nav</strong> with logo and "Get The Course" CTA</li>
-                            <li><strong>Hero</strong>: "Stop pitching platforms. Start picking brands." with three meta stats</li>
-                            <li><strong>Problem block</strong>: three reasons most aspiring UGC creators stay stuck</li>
-                            <li><strong>The Method</strong>: your three-part pitch framework, side-by-side with a pull quote</li>
-                            <li><strong>Proof</strong>: testimonial cards (placeholders for your real student quotes)</li>
-                            <li><strong>Lead magnet opt-in</strong>: the 3-Paragraph Pitch Template</li>
-                            <li><strong>Offer card</strong>: course + bonuses + price + guarantee</li>
-                            <li><strong>Authority / About</strong>: short-form bio linking to your feed</li>
-                            <li><strong>Dark final CTA</strong>: one last push to enroll</li>
-                            <li><strong>FAQ accordion</strong>: six honest answers to the real objections</li>
+                            <li><strong>Hero</strong>: "bet 90 days on yourself." with your story compressed into one subline</li>
+                            <li><strong>VSL slot</strong>: 16:9 placeholder, embed-ready</li>
+                            <li><strong>Proof bar</strong>: $16.6K March est. commissions · $3,063 one-day payout · 3 students with posted wins (cited as your posts)</li>
+                            <li><strong>What's inside</strong>: the course (your 90 days in order) + the Room (your existing Discord) + templates</li>
+                            <li><strong>Offer card</strong>: price and guarantee marked [CONFIRM]</li>
+                            <li><strong>FAQ</strong>: including the real #1 objection, "how do I know this is real"</li>
+                            <li><strong>Final CTA</strong>: "nothing changes if nothing changes." + a bridge to the free masterclass</li>
                         </ul>
 
-                        <h4>What to fill in before you push it live</h4>
+                        <h4>What to fill in before you push traffic</h4>
                         <ul>
-                            <li>Course price in the offer card</li>
-                            <li>Real student testimonials (three slots)</li>
-                            <li>Your guarantee copy</li>
-                            <li>Hero product image or photograph of you (swap the placeholder gradient)</li>
+                            <li>Price + guarantee in the offer card [CONFIRM]</li>
+                            <li>Checkout URL (Stan Store or new checkout) [CONFIRM]</li>
+                            <li>The VSL recording (outline is ready in deliverable 06)</li>
                         </ul>
 
                         <a href="https://henryqueroa.github.io/thesilveryouth-package/landing-page.html" class="acc-cta" target="_blank" rel="noopener">
@@ -654,41 +791,41 @@
                 </div>
             </div>
 
-            <!-- 05 VSL -->
+            <!-- 06 VSL -->
             <div class="acc-item reveal">
                 <button class="acc-head">
                     <div class="acc-head-left">
-                        <span class="acc-num">05</span>
+                        <span class="acc-num">06</span>
                         <div>
                             <div class="acc-title">VSL Outline</div>
-                            <div class="acc-meta">6 sections · 380 words · Ready to expand</div>
+                            <div class="acc-meta">6 sections · Your manifesto as the hook</div>
                         </div>
                     </div>
                     <svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
                 </button>
                 <div class="acc-body">
                     <div class="acc-body-inner">
-                        <p>A full 6-section VSL outline. Ready to expand into a 1,200-1,800 word shooting script. Target runtime 6-9 minutes.</p>
+                        <p>A full 6-section VSL outline, ready to expand into a 1,200-1,800 word shooting script (6-9 min). It slots straight into the landing page's video placeholder.</p>
 
-                        <h4>01 · Hook (0:00 - 0:20)</h4>
-                        <p>Open with the $1,200 jacket. No intro, no "hey guys." Straight into the flex.</p>
+                        <h4>01 · Hook (0:00 - 0:25)</h4>
+                        <p>Your manifesto, compressed, nearly verbatim from your pinned reel: dropout, 90 days, first five-figure month, "people still tell me I'm lying. good."</p>
 
-                        <h4>02 · Problem / agitation (0:20 - 1:40)</h4>
-                        <p>Name the real problem. It's not the follower count. It's the pitch. Land the feeling: "You keep posting, brands keep ignoring you, and you don't know if it's the content or the approach."</p>
+                        <h4>02 · Problem / agitation (0:25 - 1:40)</h4>
+                        <p>For the people commenting UGC and doing nothing: "watching isn't a system." The 9-to-5 fear named without the guru clichés.</p>
 
                         <h4>03 · Solution / mechanism (1:40 - 3:00)</h4>
-                        <p>Introduce the three-part pitch: shot list, price anchor, delivery date. Reframe niche from a limit to a specialty brands want.</p>
+                        <p>The three moves: the Content Engine (reps), the Brand Bridge (smaller brands + TikTok Shop), the Support Layer (the Room). Your own 4-step tactical beat, word for word.</p>
 
                         <h4>04 · Credibility (3:00 - 4:15)</h4>
-                        <p>Your own track record. Your feed as public proof. Student wins (real or placeholder). Anti-guru beat.</p>
+                        <p>Screen-record the actual posts: the Wins dashboards, the $3,063 day with your caption, and Grace / Dev / Roo as YOU posted them. No recreations.</p>
 
                         <h4>05 · Offer (4:15 - 6:30)</h4>
-                        <p>Course, bonuses, community (if applicable), price, guarantee. Frame price against a single paid deal.</p>
+                        <p>The community + course in your Discord. Price, curriculum, bonuses and guarantee all [CONFIRM]-slotted. Frame: one small deal covers it.</p>
 
                         <h4>06 · Close (6:30 - 8:00)</h4>
-                        <p>Scarcity-free CTA. "Every week you don't pitch is a week a brand doesn't know you exist."</p>
+                        <p>Zero fake scarcity, your register: "nothing changes if nothing changes. i gave myself 90 days. this is me handing you day one."</p>
 
-                        <p style="margin-top:16px;font-size:13px;color:var(--gray);"><em>This outline can be expanded into a full shooting script in 2-3 hours, then filmed in a single afternoon.</em></p>
+                        <p style="margin-top:16px;font-size:13px;color:var(--gray);"><em>Expandable into a full shooting script in 2-3 hours, filmed in an afternoon. The webinar close (deliverable 02) and this VSL share the same proof stack.</em></p>
                     </div>
                 </div>
             </div>
@@ -731,7 +868,7 @@
     <section class="final-cta reveal">
         <h2>Ready to <span>implement this?</span></h2>
         <p>Everything above was built specifically for The Silver Youth. Imagine what we could do working together.</p>
-        <a href="https://calendly.com/henryque-zytrom/30min" class="cta-btn" target="_blank" rel="noopener">
+        <a href="https://calendly.com/henryque-zytrom/30min" target="_blank" rel="noopener" class="cta-btn">
             Book a 20-Minute Call
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
@@ -786,6 +923,74 @@
             item.classList.toggle('open');
         });
     });
+
+    // ===== Deck viewer (PNG slides, mobile-safe; lightbox lives on <body> to escape transform traps) =====
+    (function () {
+        const TOTAL = 34;
+        let i = 1;
+        const img = document.getElementById('deckImg');
+        if (!img) return;
+        const count = document.getElementById('deckCount');
+        const pad2 = n => (n < 10 ? '0' + n : String(n));
+        const srcOf = n => 'images/slides/slide-' + pad2(n) + '.png';
+        const preload = n => { const im = new Image(); im.src = srcOf(n); };
+        const wrap = n => ((n - 1 + TOTAL) % TOTAL) + 1;
+
+        // Lightbox appended to body
+        const lb = document.createElement('div');
+        lb.className = 'deck-lightbox';
+        lb.innerHTML = '<img id="lbImg" src="' + srcOf(1) + '" alt="Deck slide enlarged">' +
+            '<div class="lb-bar"><button id="lbPrev">‹ Prev</button><span id="lbCount">1 / ' + TOTAL + '</span><button id="lbNext">Next ›</button><button id="lbClose">Close ✕</button></div>';
+        document.body.appendChild(lb);
+        const lbImg = lb.querySelector('#lbImg');
+        const lbCount = lb.querySelector('#lbCount');
+
+        function render() {
+            img.src = srcOf(i);
+            count.textContent = i + ' / ' + TOTAL;
+            lbImg.src = srcOf(i);
+            lbCount.textContent = i + ' / ' + TOTAL;
+            preload(wrap(i + 1));
+            preload(wrap(i - 1));
+        }
+        function go(d) { i = wrap(i + d); render(); }
+
+        document.getElementById('deckPrev').addEventListener('click', e => { e.stopPropagation(); go(-1); });
+        document.getElementById('deckNext').addEventListener('click', e => { e.stopPropagation(); go(1); });
+        lb.querySelector('#lbPrev').addEventListener('click', () => go(-1));
+        lb.querySelector('#lbNext').addEventListener('click', () => go(1));
+
+        function openLb() { lb.classList.add('on'); document.body.style.overflow = 'hidden'; }
+        function closeLb() { lb.classList.remove('on'); document.body.style.overflow = ''; }
+        document.getElementById('deckExpand').addEventListener('click', openLb);
+        img.addEventListener('click', openLb);
+        lb.querySelector('#lbClose').addEventListener('click', closeLb);
+        lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+
+        // Keyboard (scoped: viewer visible or lightbox open)
+        document.addEventListener('keydown', e => {
+            const lbOpen = lb.classList.contains('on');
+            const viewerVisible = document.getElementById('webinar-block').classList.contains('open');
+            if (!lbOpen && !viewerVisible) return;
+            if (e.key === 'ArrowLeft') go(-1);
+            else if (e.key === 'ArrowRight') go(1);
+            else if (e.key === 'Escape' && lbOpen) closeLb();
+        });
+
+        // Swipe
+        let sx = null;
+        [img, lbImg].forEach(el => {
+            el.addEventListener('pointerdown', e => { sx = e.clientX; });
+            el.addEventListener('pointerup', e => {
+                if (sx === null) return;
+                const dx = e.clientX - sx;
+                if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+                sx = null;
+            });
+        });
+
+        render();
+    })();
 </script>
 
 </body>
